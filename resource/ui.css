@@ -14,15 +14,21 @@ div.jp-audio, div.jp-video {
 
 .jp-title li, .jp-playlist li {
     font-size: 100%;
+    border-bottom: none;
+    border-top: 1px solid #FFFFFF;
 }
 
 div.jp-type-playlist div.jp-playlist li.jp-playlist-current {
     background-color: #682776;
-    border-bottom: 5px solid #FFFFFF;
+    border-bottom: none;
     margin: 0 -20px;
     padding: 0 10px;
 }
 .playinfor .exe_infor{
+    font-size: 88%;
+}
+
+.jp-title li, .jp-playlist li {
     font-size: 88%;
 }
 
