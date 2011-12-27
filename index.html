@@ -4,7 +4,7 @@
   <meta charset="utf-8">
 
 <!-- Website Design By: www.happyworm.com -->
-<title>Demo : jPlayer as video and audio playlist player within jquery tabs</title>
+<title>Demo : jPlayer as an audio playlist player</title>
 
 <meta name="description" content="The CSS styleable jQuery media player plugin with HTML5 support!">
 <meta name="keywords" content="jPlayer, jQuery, jQuery plugin, media, video, audio, media player, video player, audio player, mp3, mp4, m4a, m4v, aac, h264, ogg, oga, ogv, wav, webm">
@@ -82,62 +82,64 @@ $(document).ready(function(){
       swfPath: "../js",
       supplied: "oga, mp3,m4v,ogv,webmv",
       wmode: "window"
+    }
+  );
+  $("#jquery_jplayer_1").jPlayer("option","size",{width:0, height:0});
+  count = 0;
+  while(count < list_length[1]){
+
+    myPlaylist.add({
+      title: title[1][count],
+      mp3: mp[1][count],
+      oga: oga[1][count],
+      m4v: m4v[1][count],
+      ogv: ogv[1][count],
+      webmv: webmv[1][count]
+
     });
+    //alert(m4v[1][count]);
+    count++;
+  }
+  //tab switch
+  $(".tabs li").click(function(){
+
+
+    ////playlist init
+    //$(".tab #tabs-1").css({ "display" : "none"});
+    //$("#jquery_jplayer_1").jPlayer("stop");
+    //$("#jquery_jplayer_1").jPlayer("clearMedia");
+    jQuery(this).parent().parent().find("ul.tabs li").removeClass("active"); //Remove any "active" class
+    jQuery(this).addClass("active"); //Add "active" class to selected tab
+
+    myPlaylist.remove();
+    ///
+    $(".jp-type-playlist .jp-playlist #tabs-1 ul li").remove();
+    $(".jp-type-playlist .jp-playlist #tabs-2 ul li").remove();
+    $(".jp-type-playlist .jp-playlist #tabs-3 ul li").remove();
+    var divname = $(this).children().attr("title");
+
+    var divindex = $(this).children().attr("index");
+    $(".tab-item").css({ "display" : "none"});
+    $("#"+divname).css({ "display" : "block"});
     count = 0;
-    while(count < list_length[1]){
-
+    while(count < list_length[divindex]){
       myPlaylist.add({
-        title: title[1][count],
-        mp3: mp[1][count],
-        oga: oga[1][count],
-        m4v: m4v[1][count],
-        ogv: ogv[1][count],
-        webmv: webmv[1][count]
-
+        title: title[divindex][count],
+        mp3: mp[divindex][count],
+        oga: oga[divindex][count],
+        m4v: m4v[divindex][count],
+        ogv: ogv[divindex][count],
+        webmv: webmv[divindex][count]
       });
-      //alert(m4v[1][count]);
+      //alert(m4v[divindex][count]);
       count++;
     }
-    //tab switch
-    $(".tabs li").click(function(){
-
-
-      ////playlist init
-      //$(".tab #tabs-1").css({ "display" : "none"});
-      //$("#jquery_jplayer_1").jPlayer("stop");
-      //$("#jquery_jplayer_1").jPlayer("clearMedia");
-      jQuery(this).parent().parent().find("ul.tabs li").removeClass("active"); //Remove any "active" class
-      jQuery(this).addClass("active"); //Add "active" class to selected tab
-
-      myPlaylist.remove();
-      ///
-      $(".jp-type-playlist .jp-playlist #tabs-1 ul li").remove();
-      $(".jp-type-playlist .jp-playlist #tabs-2 ul li").remove();
-      $(".jp-type-playlist .jp-playlist #tabs-3 ul li").remove();
-      var divname = $(this).children().attr("title");
-
-      var divindex = $(this).children().attr("index");
-      $(".tab-item").css({ "display" : "none"});
-      $("#"+divname).css({ "display" : "block"});
-      count = 0;
-      while(count < list_length[divindex]){
-        myPlaylist.add({
-          title: title[divindex][count],
-          mp3: mp[divindex][count],
-          oga: oga[divindex][count],
-          m4v: m4v[divindex][count],
-          ogv: ogv[divindex][count],
-          webmv: webmv[divindex][count]
-        });
-        //alert(m4v[divindex][count]);
-        count++;
-      }
-    });
-    //$(".jp-type-playlist ul .list").remove();
-
   });
-  //]]>"#"+divname
-  </script>
+  //$(".jp-type-playlist ul .list").remove();
+
+});
+//]]>"#"+divname
+</script>
 
 
 </head>
@@ -145,8 +147,8 @@ $(document).ready(function(){
   <div id="container">
     <div id="content_main" >
       <input id="tmp_duration" type="hidden" value="" />
-      <div id="jquery_jplayer_1" class="jp-jplayer" style="width: 250px; height: 220px; display: block; ">
-        <img id="jp_poster_0" style="width: 250px; height: 220px; display: block; ">
+      <div id="jquery_jplayer_1" class="jp-jplayer" style=" display: block; ">
+        <img id="jp_poster_0" style=" display: block; ">
         <audio id="jp_audio_0" preload="metadata" src="http://www.jplayer.org/audio/ogg/TSP-01-Cro_magnon_man.ogg"></audio>
       </div>
       <div id="jp_container_1" class="jp-video">
