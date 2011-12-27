@@ -19,7 +19,6 @@
 <link href="/css/ie6.css" rel="stylesheet" type="text/css" />
 <![endif]-->
 <link href="./resource/jplayer.pink.flag.css" rel="stylesheet" type="text/css">
-<link href="./resource/ui.css" rel="stylesheet" type="text/css">
 <script type="text/javascript" src="./resource/jquery.min.js"></script>
 <script type="text/javascript" src="./resource/jquery.jplayer.min.js"></script>
 <script type="text/javascript" src="./resource/jplayer.playlist.min.js"></script>
@@ -29,7 +28,7 @@
 <link href="css/zen.css" rel="stylesheet">
 <script src="js/jquery.rotate.js" type="text/javascript"></script>
 <!--end-->
-
+<link href="./resource/ui.css" rel="stylesheet" type="text/css">
 <script type="text/javascript">
 //<![CDATA[
 $(document).ready(function(){
@@ -140,26 +139,23 @@ $(document).ready(function(){
     <div class="jp-type-playlist">
       <div class="jp-gui jp-interface">
         <div class="jp-progress">
-          <div class="jp-seek-bar" style="width: 100%; ">
-            <div class="jp-play-bar" style="width: 16.3137%; "></div>
+          <div class="jp-seek-bar">
+            <div class="jp-play-bar"></div>
           </div>
         </div>
         <div class="jp-current-time">00:05</div>
         <div class="jp-duration">00:33</div>
-        <div class="jp-title">
-          <ul>
-            <li>Big Buck Bunny Trailer</li>
-          </ul>
+        <div class="jp-title"><ul><li>Item Title</li></ul>
         </div>
         <div class="jp-controls-holder">
           <ul class="jp-controls">
             <li><a href="javascript:;" class="jp-previous" tabindex="1">previous</a></li>
-            <li><a href="javascript:;" class="jp-play" tabindex="1" style="display: block; ">play</a></li>
-            <li><a href="javascript:;" class="jp-pause" tabindex="1" style="display: none; ">pause</a></li>
+            <li><a href="javascript:;" class="jp-play" tabindex="1" style="display: block;">play</a></li>
+            <li><a href="javascript:;" class="jp-pause" tabindex="1" style="display: none;">pause</a></li>
             <li><a href="javascript:;" class="jp-next" tabindex="1">next</a></li>
             <li><a href="javascript:;" class="jp-stop" tabindex="1">stop</a></li>
             <li><a href="javascript:;" class="jp-mute" tabindex="1" title="mute">mute</a></li>
-            <li><a href="javascript:;" class="jp-unmute" tabindex="1" title="unmute" style="display: none; ">unmute</a></li>
+            <li><a href="javascript:;" class="jp-unmute" tabindex="1" title="unmute" style="display: none;">unmute</a></li>
             <li><a href="javascript:;" class="jp-volume-max" tabindex="1" title="max volume">max volume</a></li>
           </ul>
           <div class="jp-volume-bar">
@@ -173,8 +169,8 @@ $(document).ready(function(){
           <li><a href="#tabs-2" title="tabs-2" index="2">Audio</a></li>
           <li><a href="#tabs-3" title="tabs-3" index="3">Both</a></li>
         </ul>
-        <div class="jp-playlist" index="1" style="display: block;">
-          <div id="tabs-1" class="tab-item default" style="display: block;">
+        <div class="jp-playlist" index="1">
+          <div id="tabs-1" class="tab-item default">
             <ul>
               <li class="list">
                 <a title="unselect" href="javascript:;" 

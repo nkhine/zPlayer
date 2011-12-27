@@ -2,15 +2,39 @@
     outline: none;
 }
 
-.tabsBlock {margin-top:0px;}
+div.jp-audio, div.jp-video {
+    background-color: #3A2A45;
+    border: none;
+    color: #3A2A45;
+}
+
+.jp-video .jp-playlist ul {
+    margin: 0 20px;
+}
+
+.jp-title li, .jp-playlist li {
+    font-size: 100%;
+}
+
+div.jp-type-playlist div.jp-playlist li.jp-playlist-current {
+    background-color: #682776;
+    border-bottom: 5px solid #FFFFFF;
+    margin: 0 -20px;
+    padding: 0 10px;
+}
+.playinfor .exe_infor{
+    font-size: 88%;
+}
+
+.tabsBlock {margin-top:10px;}
 
 .tabsBlock ul.tabs,ul.am-ui-tab-strip {
-    height:10px;
+    height:20px;
     list-style:none;
     position:relative;
-    padding:1px 5px 0;
+    padding:1px 5px;
     display:block;
-    font-size:12px;
+    font-size: 77%;
     /* CSS3 Rounded Corners For Top Left/Top Right of Tabs */
     -moz-border-radius-topleft:8px;
     -moz-border-radius-topright:8px;
@@ -25,7 +49,6 @@
     margin:2px 2px 0 0;
     padding:1px 8px;
     border:solid 1px transparent;
-
     position:relative;
     float:left;
     text-decoration:none;
@@ -62,20 +85,20 @@
 .tab_container {
 
     border:solid 1px #ccc;
-    margin-bottom:6px;
+    margin-bottom:2px;
 }
 
 .tab_content {
     display:block;
-    min-height:100px;
-    padding:10px;
+    padding:5px;
     /* CSS3 Rounded Corners For the Box Outline */
     -moz-border-radius:6px;
     -webkit-border-radius:6px;
     -khtml-border-radius:6px;
 }
 div#tabs .tab-item  ul li.list {
-    font-size:12px;
-    margin-left:20px;
+    font-size:88%;
+    margin-left:10px;
     width:30px;
+    height: 35px;
 }
