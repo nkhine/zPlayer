@@ -1,6 +1,14 @@
 :focus {
     outline: none;
 }
+.slide {
+    margin: 0;
+    padding: 0;
+}
+.btn-slide {
+    color: #fff;
+    text-decoration: none;
+}
 
 div.jp-audio, div.jp-video {
     background-color: #3A2A45;

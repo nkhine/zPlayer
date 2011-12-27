@@ -32,7 +32,7 @@
 <script type="text/javascript">
 //<![CDATA[
 $(document).ready(function(){
-
+  $("div#panel").slideUp(0);
   ///init screen
   var total_length=$(".jp-type-playlist .jp-playlist ul .list").length;
   var init_point = new Array(3);
@@ -98,9 +98,14 @@ $(document).ready(function(){
   {
     $(".jp-type-playlist .jp-playlist #tabs-1 ul li").eq(k).hide();
   }
-  ////not display in load time
+  /// we don't want to display the player on load time
   $("#jquery_jplayer_1").jPlayer("option","size",{width:0, height:0});
-
+  
+  /// slide action for the control panel
+  $(".btn-slide").click(function(){
+    $("#panel").slideToggle("fast");
+    $(this).toggleClass("active"); return false;
+  });
 
   //tab switch
   $(".tabs li").click(function(){
@@ -138,31 +143,34 @@ $(document).ready(function(){
   <div id="jp_container_1" class="jp-video">
     <div class="jp-type-playlist">
       <div class="jp-gui jp-interface">
-        <div class="jp-progress">
-          <div class="jp-seek-bar">
-            <div class="jp-play-bar"></div>
+        <div id="panel"><!-- /id="panel" -->
+          <div class="jp-progress">
+            <div class="jp-seek-bar">
+              <div class="jp-play-bar"></div>
+            </div>
           </div>
-        </div>
-        <div class="jp-current-time">00:05</div>
-        <div class="jp-duration">00:33</div>
-        <div class="jp-title"><ul><li>Item Title</li></ul>
-        </div>
-        <div class="jp-controls-holder">
-          <ul class="jp-controls">
-            <li><a href="javascript:;" class="jp-previous" tabindex="1">previous</a></li>
-            <li><a href="javascript:;" class="jp-play" tabindex="1" style="display: block;">play</a></li>
-            <li><a href="javascript:;" class="jp-pause" tabindex="1" style="display: none;">pause</a></li>
-            <li><a href="javascript:;" class="jp-next" tabindex="1">next</a></li>
-            <li><a href="javascript:;" class="jp-stop" tabindex="1">stop</a></li>
-            <li><a href="javascript:;" class="jp-mute" tabindex="1" title="mute">mute</a></li>
-            <li><a href="javascript:;" class="jp-unmute" tabindex="1" title="unmute" style="display: none;">unmute</a></li>
-            <li><a href="javascript:;" class="jp-volume-max" tabindex="1" title="max volume">max volume</a></li>
-          </ul>
-          <div class="jp-volume-bar">
-            <div class="jp-volume-bar-value" style="width: 80%; "></div>
+          <div class="jp-current-time">00:05</div>
+          <div class="jp-duration">00:33</div>
+          <div class="jp-title"><ul><li>Item Title</li></ul>
           </div>
-        </div>
+          <div class="jp-controls-holder">
+            <ul class="jp-controls">
+              <li><a href="javascript:;" class="jp-previous" tabindex="1">previous</a></li>
+              <li><a href="javascript:;" class="jp-play" tabindex="1" style="display: block;">play</a></li>
+              <li><a href="javascript:;" class="jp-pause" tabindex="1" style="display: none;">pause</a></li>
+              <li><a href="javascript:;" class="jp-next" tabindex="1">next</a></li>
+              <li><a href="javascript:;" class="jp-stop" tabindex="1">stop</a></li>
+              <li><a href="javascript:;" class="jp-mute" tabindex="1" title="mute">mute</a></li>
+              <li><a href="javascript:;" class="jp-unmute" tabindex="1" title="unmute" style="display: none;">unmute</a></li>
+              <li><a href="javascript:;" class="jp-volume-max" tabindex="1" title="max volume">max volume</a></li>
+            </ul>
+            <div class="jp-volume-bar">
+              <div class="jp-volume-bar-value" style="width: 80%; "></div>
+            </div>
+          </div>
+        </div> <!-- /id="panel" -->
       </div>
+      <a href="#" class="btn-slide">Slide bar</a>
       <div id="tab" class="tabsBlock">
         <ul class="tabs">
           <li><a href="#tabs-1" title="tabs-1" index="1">Video</a></li>
