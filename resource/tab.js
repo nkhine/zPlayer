@@ -5,11 +5,7 @@ jQuery(document).ready(function() {
 	    jQuery(this).find(".tab_content").hide(); //Hide all content
 	    jQuery(this).find("ul.tabs li:first").addClass("active").show(); //Activate first tab
 	    jQuery(this).find(".tab_content:first").show(); //Show first tab content
-		
-		
-		
-	     
-	    //On Click Event
+		//On Click Event
 	    jQuery("ul.tabs li").click(function() {
 										
 	        jQuery(this).parent().parent().find("ul.tabs li").removeClass("active"); //Remove any "active" class
