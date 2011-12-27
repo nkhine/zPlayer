@@ -9,7 +9,7 @@
 <meta name="description" content="The CSS styleable jQuery media player plugin with HTML5 support!">
 <meta name="keywords" content="jPlayer, jQuery, jQuery plugin, media, video, audio, media player, video player, audio player, mp3, mp4, m4a, m4v, aac, h264, ogg, oga, ogv, wav, webm">
 <meta name="company" content="Happyworm">
-<link href="./resource/jPlayer.css" rel="stylesheet" type="text/css">
+
 <link rel="shortcut icon" href="http://www.jplayer.org/graphics/jplayer.ico" type="image/x-icon">
 <!--[if lt IE 9]>
 <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -18,27 +18,21 @@
 <!--[if IE 6]>
 <link href="/css/ie6.css" rel="stylesheet" type="text/css" />
 <![endif]-->
-<link href="./resource/prettify-jPlayer.css" rel="stylesheet" type="text/css">
 <link href="./resource/jplayer.pink.flag.css" rel="stylesheet" type="text/css">
 <link href="./resource/ui.css" rel="stylesheet" type="text/css">
-<script type="text/javascript" src="./resource/ga.js"></script><script type="text/javascript" src="./resource/load.js"></script><script type="text/javascript" src="./resource/jquery.min.js"></script>
+<script type="text/javascript" src="./resource/jquery.min.js"></script>
 <script type="text/javascript" src="./resource/jquery.jplayer.min.js"></script>
 <script type="text/javascript" src="./resource/jplayer.playlist.min.js"></script>
-<script type="text/javascript" src="./resource/jquery.jplayer.inspector.js"></script>
 <script type="text/javascript" src="./resource/tab.js"></script>
 
 <!--zend player-->
 <link href="css/zen.css" rel="stylesheet">    
 <script src="js/jquery.rotate.js" type="text/javascript"></script>    
 
-
 <!--end-->
 
 <script type="text/javascript">
-
-
 //<![CDATA[
-
 $(document).ready(function(){
 
   ///init screen
@@ -58,7 +52,6 @@ $(document).ready(function(){
     list_length[i] = $(".jp-type-playlist .jp-playlist #tabs-"+i+" ul .list").length;
     title[i] = new Array(list_length[i]);
     mp[i] = new Array(list_length[i]);
-
     oga[i] = new Array(list_length[i]);
     m4v[i] = new Array(list_length[i]);
     ogv[i] = new Array(list_length[i]);
@@ -67,7 +60,6 @@ $(document).ready(function(){
 
     for(j=0; j< list_length[i] ; j++)
     {
-
       title[i][j] = $(".jp-type-playlist .jp-playlist #tabs-"+i+" ul .list").eq(j).text();
       mp[i][j] = $(".jp-type-playlist .jp-playlist #tabs-"+i+" ul .list a").eq(j).attr("mp");
       oga[i][j] = $(".jp-type-playlist .jp-playlist #tabs-"+i+" ul .list a").eq(j).attr("oga");
@@ -76,10 +68,7 @@ $(document).ready(function(){
       webmv[i][j] = $(".jp-type-playlist .jp-playlist #tabs-"+i+" ul .list a").eq(j).attr("webmv");
       init_flag++;
     }
-
   }
-
-
   ///initial player with empty playlist
   var myPlaylist = new jPlayerPlaylist({
     jPlayer: "#jquery_jplayer_1",
@@ -92,7 +81,6 @@ $(document).ready(function(){
       wmode: "window"
     }
   );
-
   ///add media list into the playlsit
   for(i=1; i<4; i++)
   {
@@ -108,12 +96,10 @@ $(document).ready(function(){
       });
     }
   }
-
   for(k=list_length[1]; k < total_length; k++) 
   {
     $(".jp-type-playlist .jp-playlist #tabs-1 ul li").eq(k).hide();
   }
-
   ////not display in load time
   $("#jquery_jplayer_1").jPlayer("option","size",{width:0, height:0});
 
@@ -142,18 +128,14 @@ $(document).ready(function(){
   });
 
 });
-//]]>"#"+divname
+//]]>
 </script>
-
-
 </head>
-<body class="demo" onLoad="prettyPrint();">
-  <div id="container">
-    <div id="content_main" >
+
+<body>
       <input id="tmp_duration" type="hidden" value="" />
-      <div id="jquery_jplayer_1" class="jp-jplayer" style=" display: block; ">
-        <img id="jp_poster_0" style=" display: block; ">
-        <audio id="jp_audio_0" preload="metadata" src="http://www.jplayer.org/audio/ogg/TSP-01-Cro_magnon_man.ogg"></audio>
+      <div id="jquery_jplayer_1" class="jp-jplayer" style="display: block;">
+        <img id="jp_poster_0" style="display: block;">
       </div>
       <div id="jp_container_1" class="jp-video">
         <div class="jp-type-playlist">
@@ -192,9 +174,7 @@ $(document).ready(function(){
                 <li><a href="javascript:;" class="jp-repeat-off" tabindex="1" title="repeat off" style="display: none; ">repeat off</a></li>
               </ul>
             </div>
-
           </div>
-
           <div id="tab" class="tabsBlock">
             <ul class="tabs">
               <li><a href="#tabs-1" title="tabs-1" index="1">Video</a></li>
@@ -204,33 +184,35 @@ $(document).ready(function(){
             <div class="jp-playlist" index="1" style="display: block;">
               <div id="tabs-1" class="tab-item default" style="display: block;">
                 <ul>
-                  <li class = "list"><a title="unselect" href="javascript:;" m4v="http://www.jplayer.org/video/m4v/Big_Buck_Bunny_Trailer.m4v" ogv="http://www.jplayer.org/video/ogv/Big_Buck_Bunny_Trailer.ogv" webmv="http://www.jplayer.org/video/webm/Big_Buck_Bunny_Trailer.webm" poster="http://www.jplayer.org/video/poster/Big_Buck_Bunny_Trailer_480x270.png" class="track">Big Buck Bunny Trailer</a></li>
+                  <li class="list">
+                    <a title="unselect" href="javascript:;" 
+                      m4v="http://www.jplayer.org/video/m4v/Big_Buck_Bunny_Trailer.m4v" 
+                      ogv="http://www.jplayer.org/video/ogv/Big_Buck_Bunny_Trailer.ogv" 
+                      webmv="http://www.jplayer.org/video/webm/Big_Buck_Bunny_Trailer.webm" 
+                      poster="http://www.jplayer.org/video/poster/Big_Buck_Bunny_Trailer_480x270.png" 
+                      class="track">
+                      Big Buck Bunny Trailer</a>
+                  </li>
                 </ul>
-
               </div>
             </div>
             <div class="jp-playlist" index="2" style="display: none;">
               <div id="tabs-2" class="tab-item" style="display: none;">
                 <ul>
-                  <li class = "list" ><a title="unselect" href="javascript:;" mp="http://www.jplayer.org/audio/mp3/TSP-01-Cro_magnon_man.mp3" oga="http://www.jplayer.org/audio/ogg/TSP-01-Cro_magnon_man.ogg" class="track">Cro Magnon Man</a></li> 
+                  <li class="list" ><a title="unselect" href="javascript:;" mp="http://www.jplayer.org/audio/mp3/TSP-01-Cro_magnon_man.mp3" oga="http://www.jplayer.org/audio/ogg/TSP-01-Cro_magnon_man.ogg" class="track">Cro Magnon Man</a></li> 
                 </ul>
               </div>
             </div>	
             <div class="jp-playlist" index="3" style="display: none;">	
               <div id="tabs-3" class="tab-item" style="display: none;">
                 <ul>
-                  <li class = "list"><a title="unselect" href="javascript:;" m4v="http://www.jplayer.org/video/m4v/Big_Buck_Bunny_Trailer.m4v" ogv="http://www.jplayer.org/video/ogv/Big_Buck_Bunny_Trailer.ogv" webmv="http://www.jplayer.org/video/webm/Big_Buck_Bunny_Trailer.webm" poster="http://www.jplayer.org/video/poster/Big_Buck_Bunny_Trailer_480x270.png" class="track">Big Buck Bunny Trailer</a></li>
+                  <li class="list"><a title="unselect" href="javascript:;" m4v="http://www.jplayer.org/video/m4v/Big_Buck_Bunny_Trailer.m4v" ogv="http://www.jplayer.org/video/ogv/Big_Buck_Bunny_Trailer.ogv" webmv="http://www.jplayer.org/video/webm/Big_Buck_Bunny_Trailer.webm" poster="http://www.jplayer.org/video/poster/Big_Buck_Bunny_Trailer_480x270.png" class="track">Big Buck Bunny Trailer</a></li>
                   <li class = "list"><a title="unselect" href="javascript:;" mp="http://www.jplayer.org/audio/mp3/TSP-01-Cro_magnon_man.mp3" oga="http://www.jplayer.org/audio/ogg/TSP-01-Cro_magnon_man.ogg" class="track">Cro Magnon Man</a></li> 
                 </ul>
               </div>
             </div>
-          </div> 
-
+          </div>
         </div>
-
       </div>
-
-    </div>	
-  </div>
 </body>
 </html>
