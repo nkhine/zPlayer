@@ -487,7 +487,7 @@ div.jp-video .jp-volume-bar {
 .jp-title li,
 .jp-playlist li {
 	position: relative;
-	border-top:5px solid #ffffff;
+	
 	border-bottom:5px solid #ffffff;
 	overflow: hidden;
 	margin: 0 -20px;
@@ -507,12 +507,12 @@ div.jp-video .jp-volume-bar {
 /* Note that the first-child (IE6) and last-child (IE6/7/8) selectors do not work on IE */
 
 div.jp-type-playlist div.jp-playlist li:first-child {
-	border-top:10px solid #FFFFFF;
+
 	padding-top:3px;
 }
 
 div.jp-type-playlist div.jp-playlist li:last-child {
-	border-bottom:10px solid #FFFFFF;
+	border-bottom: 5px solid #FFFFFF;
 	padding-bottom:3px;
 }
 
@@ -540,7 +540,7 @@ div.jp-type-playlist div.jp-playlist li.jp-playlist-current {
 	background-color:#682776;
 	margin: 0 -20px;
 	padding: 0 10px;
-	border-top: 5px solid #ffffff;
+
 	border-bottom: 5px solid #ffffff;
 }
 
@@ -681,9 +681,10 @@ div.jp-jplayer {
 }
 .exe_infor {
 	color:#ffffff;
-	width:30px;
+	width:140px;
 	height:30px;
-	font-size:12px;	
+	font-size:14px;	
+	margin-top: 8px;
 	line-height:13px;
 }
 .detail_infor {
@@ -691,7 +692,7 @@ div.jp-jplayer {
 }
 .jp-playlist ul li a {
 	float:left;
-	width:230px;
+	width:330px;
 	line-height:18px;
 }
 .file_infor {
