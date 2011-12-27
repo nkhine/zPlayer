@@ -4,7 +4,7 @@
   <meta charset="utf-8">
 
 <!-- Website Design By: www.happyworm.com -->
-<title>Demo : jPlayer as an audio playlist player</title>
+<title>Demo : jPlayer as an audio and video playlist player</title>
 
 <meta name="description" content="The CSS styleable jQuery media player plugin with HTML5 support!">
 <meta name="keywords" content="jPlayer, jQuery, jQuery plugin, media, video, audio, media player, video player, audio player, mp3, mp4, m4a, m4v, aac, h264, ogg, oga, ogv, wav, webm">
@@ -26,9 +26,8 @@
 <script type="text/javascript" src="./resource/tab.js"></script>
 
 <!--zend player-->
-<link href="css/zen.css" rel="stylesheet">    
-<script src="js/jquery.rotate.js" type="text/javascript"></script>    
-
+<link href="css/zen.css" rel="stylesheet">
+<script src="js/jquery.rotate.js" type="text/javascript"></script>
 <!--end-->
 
 <script type="text/javascript">
@@ -133,86 +132,79 @@ $(document).ready(function(){
 </head>
 
 <body>
-      <input id="tmp_duration" type="hidden" value="" />
-      <div id="jquery_jplayer_1" class="jp-jplayer" style="display: block;">
-        <img id="jp_poster_0" style="display: block;">
-      </div>
-      <div id="jp_container_1" class="jp-video">
-        <div class="jp-type-playlist">
-          <div class="jp-gui jp-interface">
-            <div class="jp-progress">
-              <div class="jp-seek-bar" style="width: 100%; ">
-                <div class="jp-play-bar" style="width: 16.3137%; "></div>
-              </div>
-            </div>
-            <div class="jp-current-time">00:05</div>
-            <div class="jp-duration">00:33</div>
-            <div class="jp-title">
-              <ul>
-                <li>Big Buck Bunny Trailer</li>
-              </ul>
-            </div>
-            <div class="jp-controls-holder">
-              <ul class="jp-controls">
-                <li><a href="javascript:;" class="jp-previous" tabindex="1">previous</a></li>
-                <li><a href="javascript:;" class="jp-play" tabindex="1" style="display: block; ">play</a></li>
-                <li><a href="javascript:;" class="jp-pause" tabindex="1" style="display: none; ">pause</a></li>
-                <li><a href="javascript:;" class="jp-next" tabindex="1">next</a></li>
-                <li><a href="javascript:;" class="jp-stop" tabindex="1">stop</a></li>
-                <li><a href="javascript:;" class="jp-mute" tabindex="1" title="mute">mute</a></li>
-                <li><a href="javascript:;" class="jp-unmute" tabindex="1" title="unmute" style="display: none; ">unmute</a></li>
-                <li><a href="javascript:;" class="jp-volume-max" tabindex="1" title="max volume">max volume</a></li>
-              </ul>
-              <div class="jp-volume-bar">
-                <div class="jp-volume-bar-value" style="width: 80%; "></div>
-              </div>
-
-              <ul class="jp-toggles">
-                <li><a href="javascript:;" class="jp-full-screen" tabindex="1" title="full screen">full screen</a></li>
-                <li><a href="javascript:;" class="jp-restore-screen" tabindex="1" title="restore screen" style="display: none; ">restore screen</a></li>
-                <li><a href="javascript:;" class="jp-repeat" tabindex="1" title="repeat">repeat</a></li>
-                <li><a href="javascript:;" class="jp-repeat-off" tabindex="1" title="repeat off" style="display: none; ">repeat off</a></li>
-              </ul>
-            </div>
+  <input id="tmp_duration" type="hidden" value="" />
+  <div id="jquery_jplayer_1" class="jp-jplayer" style="display: block;">
+    <img id="jp_poster_0" style="display: block;">
+  </div>
+  <div id="jp_container_1" class="jp-video">
+    <div class="jp-type-playlist">
+      <div class="jp-gui jp-interface">
+        <div class="jp-progress">
+          <div class="jp-seek-bar" style="width: 100%; ">
+            <div class="jp-play-bar" style="width: 16.3137%; "></div>
           </div>
-          <div id="tab" class="tabsBlock">
-            <ul class="tabs">
-              <li><a href="#tabs-1" title="tabs-1" index="1">Video</a></li>
-              <li><a href="#tabs-2" title="tabs-2" index="2">Audio</a></li>
-              <li><a href="#tabs-3" title="tabs-3" index="3">Both</a></li>
-            </ul>
-            <div class="jp-playlist" index="1" style="display: block;">
-              <div id="tabs-1" class="tab-item default" style="display: block;">
-                <ul>
-                  <li class="list">
-                    <a title="unselect" href="javascript:;" 
-                      m4v="http://www.jplayer.org/video/m4v/Big_Buck_Bunny_Trailer.m4v" 
-                      ogv="http://www.jplayer.org/video/ogv/Big_Buck_Bunny_Trailer.ogv" 
-                      webmv="http://www.jplayer.org/video/webm/Big_Buck_Bunny_Trailer.webm" 
-                      poster="http://www.jplayer.org/video/poster/Big_Buck_Bunny_Trailer_480x270.png" 
-                      class="track">
-                      Big Buck Bunny Trailer</a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div class="jp-playlist" index="2" style="display: none;">
-              <div id="tabs-2" class="tab-item" style="display: none;">
-                <ul>
-                  <li class="list" ><a title="unselect" href="javascript:;" mp="http://www.jplayer.org/audio/mp3/TSP-01-Cro_magnon_man.mp3" oga="http://www.jplayer.org/audio/ogg/TSP-01-Cro_magnon_man.ogg" class="track">Cro Magnon Man</a></li> 
-                </ul>
-              </div>
-            </div>	
-            <div class="jp-playlist" index="3" style="display: none;">	
-              <div id="tabs-3" class="tab-item" style="display: none;">
-                <ul>
-                  <li class="list"><a title="unselect" href="javascript:;" m4v="http://www.jplayer.org/video/m4v/Big_Buck_Bunny_Trailer.m4v" ogv="http://www.jplayer.org/video/ogv/Big_Buck_Bunny_Trailer.ogv" webmv="http://www.jplayer.org/video/webm/Big_Buck_Bunny_Trailer.webm" poster="http://www.jplayer.org/video/poster/Big_Buck_Bunny_Trailer_480x270.png" class="track">Big Buck Bunny Trailer</a></li>
-                  <li class = "list"><a title="unselect" href="javascript:;" mp="http://www.jplayer.org/audio/mp3/TSP-01-Cro_magnon_man.mp3" oga="http://www.jplayer.org/audio/ogg/TSP-01-Cro_magnon_man.ogg" class="track">Cro Magnon Man</a></li> 
-                </ul>
-              </div>
-            </div>
+        </div>
+        <div class="jp-current-time">00:05</div>
+        <div class="jp-duration">00:33</div>
+        <div class="jp-title">
+          <ul>
+            <li>Big Buck Bunny Trailer</li>
+          </ul>
+        </div>
+        <div class="jp-controls-holder">
+          <ul class="jp-controls">
+            <li><a href="javascript:;" class="jp-previous" tabindex="1">previous</a></li>
+            <li><a href="javascript:;" class="jp-play" tabindex="1" style="display: block; ">play</a></li>
+            <li><a href="javascript:;" class="jp-pause" tabindex="1" style="display: none; ">pause</a></li>
+            <li><a href="javascript:;" class="jp-next" tabindex="1">next</a></li>
+            <li><a href="javascript:;" class="jp-stop" tabindex="1">stop</a></li>
+            <li><a href="javascript:;" class="jp-mute" tabindex="1" title="mute">mute</a></li>
+            <li><a href="javascript:;" class="jp-unmute" tabindex="1" title="unmute" style="display: none; ">unmute</a></li>
+            <li><a href="javascript:;" class="jp-volume-max" tabindex="1" title="max volume">max volume</a></li>
+          </ul>
+          <div class="jp-volume-bar">
+            <div class="jp-volume-bar-value" style="width: 80%; "></div>
           </div>
         </div>
       </div>
+      <div id="tab" class="tabsBlock">
+        <ul class="tabs">
+          <li><a href="#tabs-1" title="tabs-1" index="1">Video</a></li>
+          <li><a href="#tabs-2" title="tabs-2" index="2">Audio</a></li>
+          <li><a href="#tabs-3" title="tabs-3" index="3">Both</a></li>
+        </ul>
+        <div class="jp-playlist" index="1" style="display: block;">
+          <div id="tabs-1" class="tab-item default" style="display: block;">
+            <ul>
+              <li class="list">
+                <a title="unselect" href="javascript:;" 
+                m4v="http://www.jplayer.org/video/m4v/Big_Buck_Bunny_Trailer.m4v" 
+                ogv="http://www.jplayer.org/video/ogv/Big_Buck_Bunny_Trailer.ogv" 
+                webmv="http://www.jplayer.org/video/webm/Big_Buck_Bunny_Trailer.webm" 
+                poster="http://www.jplayer.org/video/poster/Big_Buck_Bunny_Trailer_480x270.png" 
+                class="track">
+                Big Buck Bunny Trailer</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="jp-playlist" index="2" style="display: none;">
+          <div id="tabs-2" class="tab-item" style="display: none;">
+            <ul>
+              <li class="list" ><a title="unselect" href="javascript:;" mp="http://www.jplayer.org/audio/mp3/TSP-01-Cro_magnon_man.mp3" oga="http://www.jplayer.org/audio/ogg/TSP-01-Cro_magnon_man.ogg" class="track">Cro Magnon Man</a></li> 
+            </ul>
+          </div>
+        </div>	
+        <div class="jp-playlist" index="3" style="display: none;">	
+          <div id="tabs-3" class="tab-item" style="display: none;">
+            <ul>
+              <li class="list"><a title="unselect" href="javascript:;" m4v="http://www.jplayer.org/video/m4v/Big_Buck_Bunny_Trailer.m4v" ogv="http://www.jplayer.org/video/ogv/Big_Buck_Bunny_Trailer.ogv" webmv="http://www.jplayer.org/video/webm/Big_Buck_Bunny_Trailer.webm" poster="http://www.jplayer.org/video/poster/Big_Buck_Bunny_Trailer_480x270.png" class="track">Big Buck Bunny Trailer</a></li>
+              <li class = "list"><a title="unselect" href="javascript:;" mp="http://www.jplayer.org/audio/mp3/TSP-01-Cro_magnon_man.mp3" oga="http://www.jplayer.org/audio/ogg/TSP-01-Cro_magnon_man.ogg" class="track">Cro Magnon Man</a></li> 
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
