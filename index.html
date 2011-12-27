@@ -41,42 +41,28 @@
 $(document).ready(function(){
 	
 	
-	new jPlayerPlaylist({
+	var myPlaylist = new jPlayerPlaylist({
 		jPlayer: "#jquery_jplayer_1",
 		cssSelectorAncestor: "#jp_container_1"
 	}, [
-		{
-			title:"Cro Magnon",
-			mp3:"http://www.jplayer.org/audio/mp3/TSP-01-Cro_magnon_man.mp3",
-			oga:"http://www.jplayer.org/audio/ogg/TSP-01-Cro_magnon_man.ogg"
-		},
-		{
-			title:"Your Face",
-			mp3:"http://www.jplayer.org/audio/mp3/TSP-05-Your_face.mp3",
-			oga:"http://www.jplayer.org/audio/ogg/TSP-05-Your_face.ogg"
-		},
-		{
-			title:"Cyber Sonnet",
-			mp3:"http://www.jplayer.org/audio/mp3/TSP-07-Cybersonnet.mp3",
-			oga:"http://www.jplayer.org/audio/ogg/TSP-07-Cybersonnet.ogg"
-		},
-		{
-			title:"Tempered Song",
-			mp3:"http://www.jplayer.org/audio/mp3/Miaow-01-Tempered-song.mp3",
-			oga:"http://www.jplayer.org/audio/ogg/Miaow-01-Tempered-song.ogg"
-		},		
-		{
-			title:"Partir",
-			
-			mp3:"http://www.jplayer.org/audio/mp3/Miaow-09-Partir.mp3",
-			oga:"http://www.jplayer.org/audio/ogg/Miaow-09-Partir.ogg"
-		}
+		
 	], {
 		swfPath: "../js",
 		supplied: "oga, mp3",
 		wmode: "window"
 	});
 
+		$(".track").click(function(e) {
+		if($(this).attr("title")=="unselect"){
+			myPlaylist.add({
+				title: $(this).text(),
+				mp3: $(this).attr("mp"),
+				oga: $(this).attr("oga")
+			});
+		$(this).attr("title","select");
+		}	
+	});
+	
 	
 });
 //]]>
@@ -91,6 +77,41 @@ $(document).ready(function(){
 })();
 </script>
 
+<style>
+
+.demo-container {
+
+	padding:0 20px;
+	font-family: "Myriad Pro Regular","Trebuchet MS";
+}
+
+.demo-container a, .demo-container a:link, .demo-container a:visited, .demo-container a:hover, .demo-container a:focus, .demo-container a:active {
+	color: #009BE3;
+}
+
+.demo-container ul {
+	list-style-type:none;
+	padding:0;
+	margin:1em 0;
+	width:100%;
+	overflow:hidden;
+}
+
+.demo-container ul span {
+	color: #A0A600;
+}
+
+.demo-container li {
+	float:left;
+	margin-right:1em;
+}
+
+.demo-container p span.track-name {
+	color: #CC0090;
+}
+
+
+</style>
 </head><body class="demo" onLoad="prettyPrint();">
 <div id="container">
 
@@ -100,10 +121,24 @@ $(document).ready(function(){
 
 		<input id="tmp_duration" type="hidden" value="" />
 		<section>
-			
+		<div id="jp_ul_playlist" class="demo-container">
+				<ul> 
+				
+					<li><a title="unselect" href="javascript:;" mp="http://www.jplayer.org/audio/mp3/TSP-01-Cro_magnon_man.mp3" oga="http://www.jplayer.org/audio/ogg/TSP-01-Cro_magnon_man.ogg" class="track">Cro Magnon Man	</a></li> 
+					<li> | </li> 
+					<li><a title="unselect" href="javascript:;" mp="http://www.jplayer.org/audio/mp3/TSP-05-Your_face.mp3" oga="http://www.jplayer.org/audio/ogg/TSP-05-Your_face.ogg" class="track">Your Face</a></li> 
+					<li> | </li> 
+					<li><a  title="unselect" href="javascript:;" mp="http://www.jplayer.org/audio/mp3/TSP-07-Cybersonnet.mp3" oga="http://www.jplayer.org/audio/ogg/TSP-07-Cybersonnet.ogg" class="track">Cyber Sonnet</a></li> 
+					<li> | </li> 
+					<li><a title="unselect" href="javascript:;" mp="http://www.jplayer.org/audio/mp3/Miaow-01-Tempered-song.mp3"   oga="http://www.jplayer.org/audio/ogg/Miaow-01-Tempered-song.ogg" class="track">Tempered Song</a></li> 
+					<li> | </li> 
+					<li><a title="unselect" href="javascript:;" mp="http://www.jplayer.org/audio/mp3/Miaow-09-Partir.mp3" oga="http://www.jplayer.org/audio/ogg/Miaow-09-Partir.ogg" class="track">Partir</a></li> 
+			</ul> 
+			</div>	
 		<div id="jquery_jplayer_1" class="jp-jplayer_" style="width: 0px; height: 0px; "><img id="jp_poster_0" style="width: 0px; height: 0px; display: none; "><audio id="jp_audio_0" preload="metadata" src="http://www.jplayer.org/audio/ogg/TSP-01-Cro_magnon_man.ogg"></audio></div>
 
 		<div id="jp_container_1" class="jp-audio">
+			
 			<div class="jp-type-playlist">
 				<div class="jp-gui jp-interface">
 					<ul class="jp-controls">
@@ -136,44 +171,7 @@ $(document).ready(function(){
 				</div>
 				<div class="jp-playlist">
 					<ul style="display: block; ">
-                    <!--
-                    
-                    	<li class="jp-playlist-current">
-                        	<div class="playinfor">
-                            	<table width="230">
-                                	<tr><td>
-                                        <a href="javascript:;" class="jp-playlist-item-remove" style="display: none; ">×</a>
-                                        <a href="javascript:;" class="jp-playlist-item jp-playlist-current" tabindex="1">Cro Magnon</a>
-                                    </td>
-                                    <td width="48">
-                                        <div class="player_btn"></div>
-                                    </td> 
-                                    <td width="45">  
-                                        <div class="exe_infor">mp3 ogg</div>
-                                    </td></tr>
-                                 </table>
-                            </div>
-                        </li>
-                        <li>
-                        	<div class="playinfor">
-                            	<table width="230">
-                                	<tr><td>
-                                        <a href="javascript:;" class="jp-playlist-item-remove" style="display: none; ">×</a>
-                                        <a href="javascript:;" class="jp-playlist-item" tabindex="1">Your Face</a>
-                                    	<div class="detail_infor">31.4M DURATION:21:05</div>
-                                    </td>
-                                    <td width="48">
-                                        <div class="player_btn"></div>
-                                    </td> 
-                                    <td width="45">  
-                                        <div class="exe_infor">mp3 ogg</div>
-                                    </td></tr>
-                                 </table>
-                            </div>
-                        </li>
-                    	
-                    -->
-                    </ul>
+          </ul>
 				</div>
 				<div class="jp-no-solution" style="display: none; ">
 					<span>Update Required</span>

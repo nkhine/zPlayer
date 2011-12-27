@@ -22,6 +22,7 @@ $(document).ready(function(){
 		//$(".jp-jplayer_").jPlayer("play");
 			status = "play";
 			
+			//$(".jp-jplayer_").jPlayer("play");
 		/*	$(".jp-playlist-current .playinfor div#zen").addClass( "play" );
 			$(".jp-controls .jp-play").click();
 			
@@ -31,11 +32,14 @@ $(document).ready(function(){
 				*/
 			//
 			//alert("pause");
-			$('.jp-playlist-current .playinfor div#zen .circle').removeClass( "rotate" );
-			$(".jp-playlist-current .playinfor div#zen").removeClass( "play" );
+			$(".jp-playlist-current .playinfor div#zen").addClass( "play" );
+			
+			$(".jp-jplayer_").jPlayer("play");
 			
 		} else {
-		$(".jp-jplayer_").jPlayer("pause");
+		$('.jp-playlist-current .playinfor div#zen .circle').removeClass( "rotate" );
+			$(".jp-playlist-current .playinfor div#zen").removeClass( "play" );
+		//$(".jp-jplayer_").jPlayer("pause");
 		
 		status = "pause";
 		
