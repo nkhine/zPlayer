@@ -18,101 +18,67 @@
 <!--[if IE 6]>
 <link href="/css/ie6.css" rel="stylesheet" type="text/css" />
 <![endif]-->
-<link href="./resource/prettify-jPlayer.css" rel="stylesheet" type="text/css">
+
 <link href="./resource/jplayer.pink.flag.css" rel="stylesheet" type="text/css">
-<script type="text/javascript" src="./resource/ga.js"></script><script type="text/javascript" src="./resource/load.js"></script><script type="text/javascript" src="./resource/jquery.min.js"></script>
+<script type="text/javascript" src="./resource/load.js"></script>
+<script type="text/javascript" src="./resource/jquery.min.js"></script>
 <script type="text/javascript" src="./resource/jquery.jplayer.min.js"></script>
 <script type="text/javascript" src="./resource/jplayer.playlist.min.js"></script>
-<script type="text/javascript" src="./resource/jquery.jplayer.inspector.js"></script>
-<script type="text/javascript" src="./resource/themeswitcher.js"></script>
 
 <!--zend player-->
-	<link href="css/zen.css" rel="stylesheet">    
-    <script src="js/jquery.rotate.js" type="text/javascript"></script>    
-    
+<link href="css/zen.css" rel="stylesheet">    
+<script type="text/javascript" src="js/jquery.rotate.js"></script>
     
 <!--end-->
 
 <script type="text/javascript">
-	
-
 //<![CDATA[
 
 $(document).ready(function(){
-	
-	
-	var myPlaylist = new jPlayerPlaylist({
-		jPlayer: "#jquery_jplayer_1",
-		cssSelectorAncestor: "#jp_container_1"
-	}, [
-		
-	], {
-		swfPath: "../js",
-		supplied: "oga, mp3",
-		wmode: "window"
-	});
 
-		$(".track").click(function(e) {
-		if($(this).attr("title")=="unselect"){
-			myPlaylist.add({
-				title: $(this).text(),
-				mp3: $(this).attr("mp"),
-				oga: $(this).attr("oga")
-			});
-		$(this).attr("title","select");
-		}	
-	});
-	
-	
-});
-//]]>
-</script>
-<script type="text/javascript">
-(function() {
-	var s = document.createElement('script'), t = document.getElementsByTagName('script')[0];
-	s.type = 'text/javascript';
-	s.async = true;
-	s.src = 'http://api.flattr.com/js/0.6/load.js?mode=auto';
-	t.parentNode.insertBefore(s, t);
-})();
-</script>
+  var list_length=$(".jp-type-playlist ul .list").length;
+  var count = 0;
+  title = new Array(list_length);
+  mp = new Array(list_length);
+  oga = new Array(list_length);
+  while(count < list_length){
 
-<style>
-
-.demo-container {
-
-	padding:0 20px;
-	font-family: "Myriad Pro Regular","Trebuchet MS";
-}
-
-.demo-container a, .demo-container a:link, .demo-container a:visited, .demo-container a:hover, .demo-container a:focus, .demo-container a:active {
-	color: #009BE3;
-}
-
-.demo-container ul {
-	list-style-type:none;
-	padding:0;
-	margin:1em 0;
-	width:100%;
-	overflow:hidden;
-}
-
-.demo-container ul span {
-	color: #A0A600;
-}
-
-.demo-container li {
-	float:left;
-	margin-right:1em;
-}
-
-.demo-container p span.track-name {
-	color: #CC0090;
-}
+    title[count] = $(".jp-type-playlist ul .list").eq(count).text();
+    mp[count] = $(".jp-type-playlist ul .list a").eq(count).attr("mp");
+    oga[count] = $(".jp-type-playlist ul .list a").eq(count).attr("oga");
+    count++;
 
 
-</style>
-</head><body class="demo" onLoad="prettyPrint();">
+  }
+  //$(".jp-type-playlist ul .list").remove();
+  var myPlaylist = new jPlayerPlaylist({
+    jPlayer: "#jquery_jplayer_1",
+    cssSelectorAncestor: "#jp_container_1"
+    }, [
+
+    ], {
+      swfPath: "../js",
+      supplied: "oga, mp3",
+      wmode: "window"
+    });
+
+    count = 0;
+    while(count < list_length){
+
+      myPlaylist.add({
+        title: title[count],
+        mp3: mp[count],
+        oga: oga[count]
+      });
+
+      count++
+    }
+  });
+  //]]>
+  </script>
+
+
+</head><body>
 <div id="container">
 
 	
@@ -120,23 +86,8 @@ $(document).ready(function(){
 	<div id="content_main">
 
 		<input id="tmp_duration" type="hidden" value="" />
-		<section>
-		<div id="jp_ul_playlist" class="demo-container">
-				<ul> 
-				
-					<li><a title="unselect" href="javascript:;" mp="http://www.jplayer.org/audio/mp3/TSP-01-Cro_magnon_man.mp3" oga="http://www.jplayer.org/audio/ogg/TSP-01-Cro_magnon_man.ogg" class="track">Cro Magnon Man	</a></li> 
-					<li> | </li> 
-					<li><a title="unselect" href="javascript:;" mp="http://www.jplayer.org/audio/mp3/TSP-05-Your_face.mp3" oga="http://www.jplayer.org/audio/ogg/TSP-05-Your_face.ogg" class="track">Your Face</a></li> 
-					<li> | </li> 
-					<li><a  title="unselect" href="javascript:;" mp="http://www.jplayer.org/audio/mp3/TSP-07-Cybersonnet.mp3" oga="http://www.jplayer.org/audio/ogg/TSP-07-Cybersonnet.ogg" class="track">Cyber Sonnet</a></li> 
-					<li> | </li> 
-					<li><a title="unselect" href="javascript:;" mp="http://www.jplayer.org/audio/mp3/Miaow-01-Tempered-song.mp3"   oga="http://www.jplayer.org/audio/ogg/Miaow-01-Tempered-song.ogg" class="track">Tempered Song</a></li> 
-					<li> | </li> 
-					<li><a title="unselect" href="javascript:;" mp="http://www.jplayer.org/audio/mp3/Miaow-09-Partir.mp3" oga="http://www.jplayer.org/audio/ogg/Miaow-09-Partir.ogg" class="track">Partir</a></li> 
-			</ul> 
-			</div>	
-		<div id="jquery_jplayer_1" class="jp-jplayer_" style="width: 0px; height: 0px; "><img id="jp_poster_0" style="width: 0px; height: 0px; display: none; "><audio id="jp_audio_0" preload="metadata" src="http://www.jplayer.org/audio/ogg/TSP-01-Cro_magnon_man.ogg"></audio></div>
 
+		<div id="jquery_jplayer_1" class="jp-jplayer_"></div>
 		<div id="jp_container_1" class="jp-audio">
 			
 			<div class="jp-type-playlist">
@@ -161,7 +112,7 @@ $(document).ready(function(){
 						<div class="jp-volume-bar-value" style="width: 80%; "></div>
 					</div>
 					<div class="jp-current-time">00:00</div>
-					<div class="jp-duration">04:27</div>
+					<div class="jp-duration">29:03</div>
 					<ul class="jp-toggles">
 						<li><a href="javascript:;" class="jp-shuffle" tabindex="1" title="shuffle">shuffle</a></li>
 						<li><a href="javascript:;" class="jp-shuffle-off" tabindex="1" title="shuffle off" style="display: none; ">shuffle off</a></li>
@@ -171,7 +122,17 @@ $(document).ready(function(){
 				</div>
 				<div class="jp-playlist">
 					<ul style="display: block; ">
-          </ul>
+	                   <li class = "list"><a title="unselect" href="javascript:;" oga="http://www.jplayer.org/audio/ogg/TSP-01-Cro_magnon_man.ogg" class="track">Cro Magnon Man	</a></li> 
+						 
+						<li class = "list"><a title="unselect" href="javascript:;" mp="http://www.jplayer.org/audio/mp3/TSP-05-Your_face.mp3" oga="http://www.jplayer.org/audio/ogg/TSP-05-Your_face.ogg" class="track">Your Face</a></li> 
+						
+						<li class = "list"><a  title="unselect" href="javascript:;" mp="http://www.jplayer.org/audio/mp3/TSP-07-Cybersonnet.mp3" oga="http://www.jplayer.org/audio/ogg/TSP-07-Cybersonnet.ogg" class="track">Cyber Sonnet</a></li> 
+						
+						<li class = "list"><a title="unselect" href="javascript:;" mp="http://www.jplayer.org/audio/mp3/Miaow-01-Tempered-song.mp3">Tempered Song</a></li> 
+						
+						<li class = "list"><a title="unselect" href="javascript:;" mp="http://www.jplayer.org/audio/mp3/Miaow-09-Partir.mp3" oga="http://www.jplayer.org/audio/ogg/Miaow-09-Partir.ogg" class="track">Partir</a></li> 
+
+                    </ul>
 				</div>
 				<div class="jp-no-solution" style="display: none; ">
 					<span>Update Required</span>
@@ -179,12 +140,8 @@ $(document).ready(function(){
 				</div>
 			</div>
 		</div>
-			
-		</section>
+
 	</div>
 	
 </div>
-
-<script type="text/javascript" src="./resource/prettify-jPlayer.js"></script>
-
 </body></html>

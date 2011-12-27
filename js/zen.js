@@ -19,19 +19,7 @@ $(document).ready(function(){
            
 		
         if(status != "play") {
-		//$(".jp-jplayer_").jPlayer("play");
 			status = "play";
-			
-			//$(".jp-jplayer_").jPlayer("play");
-		/*	$(".jp-playlist-current .playinfor div#zen").addClass( "play" );
-			$(".jp-controls .jp-play").click();
-			
-			
-				displayProgress(time);
-				displayBuffered(time);
-				*/
-			//
-			//alert("pause");
 			$(".jp-playlist-current .playinfor div#zen").addClass( "play" );
 			
 			$(".jp-jplayer_").jPlayer("play");
@@ -39,19 +27,7 @@ $(document).ready(function(){
 		} else {
 		$('.jp-playlist-current .playinfor div#zen .circle').removeClass( "rotate" );
 			$(".jp-playlist-current .playinfor div#zen").removeClass( "play" );
-		//$(".jp-jplayer_").jPlayer("pause");
-		
 		status = "pause";
-		
-		//alert("pause");
-		/*
-			$('.jp-playlist-current .playinfor div#zen .circle').removeClass( "rotate" );
-			$(".jp-playlist-current .playinfor div#zen").removeClass( "play" );
-			
-			$(".jp-controls .jp-pause").click();
-			$('.jp-playlist-current .playinfor div#zen .progress').stop();
-			$('.jp-playlist-current .playinfor div#zen .buffer').stop();
-			*/
 		}
 	};
 
@@ -60,17 +36,11 @@ $(document).ready(function(){
 	function displayProgress(pc) {
 		
 		var degs = 100 * 3.6+"deg"; 
-		//$('#zen .progress').css({rotate: degs}); 
-		
 		$('#zen .progress').animate({rotate: degs}, pc);
-		
 	}
 	function displayBuffered(pc) {
 		var degs = 100 * 3.6+"deg"; 
 		pc= pc*0.5;
-		//$('#zen .buffer').css({rotate: degs}); 	
 		$('#zen .buffer').animate({rotate: degs}, pc);
-		
 	}
-	
 });
