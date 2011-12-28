@@ -137,23 +137,23 @@ $(document).ready(function(){
 
 <body>
   <input id="tmp_duration" type="hidden" value="" />
-  <div id="jquery_jplayer_1" class="jp-jplayer" style="display: block;">
-    <img id="jp_poster_0" style="display: block;">
+  <div id="jquery_jplayer_1" class="jp-jplayer">
+    <img id="jp_poster_0">
   </div>
   <div id="jp_container_1" class="jp-video">
     <div class="jp-type-playlist">
       <div class="jp-gui jp-interface">
-        <div id="panel"><!-- /id="panel" -->
           <div class="jp-progress">
             <div class="jp-seek-bar">
               <div class="jp-play-bar"></div>
             </div>
           </div>
+          <div id="panel"><!-- /id="panel" -->
           <div class="jp-current-time">00:05</div>
           <div class="jp-duration">00:33</div>
           <div class="jp-title"><ul><li>Item Title</li></ul>
           </div>
-          <div class="jp-controls-holder">
+          <div class="jp-controls-holder"> <!-- class="jp-controls-holder" -->
             <ul class="jp-controls">
               <li><a href="javascript:;" class="jp-previous" tabindex="1">previous</a></li>
               <li><a href="javascript:;" class="jp-play" tabindex="1" style="display: block;">play</a></li>
@@ -167,7 +167,7 @@ $(document).ready(function(){
             <div class="jp-volume-bar">
               <div class="jp-volume-bar-value" style="width: 80%; "></div>
             </div>
-          </div>
+          </div> <!-- /class="jp-controls-holder" -->
         </div> <!-- /id="panel" -->
       </div>
       <a href="#" class="btn-slide">Slide bar</a>

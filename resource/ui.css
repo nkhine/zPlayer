@@ -1,14 +1,12 @@
 :focus {
     outline: none;
 }
-.slide {
-    margin: 0;
-    padding: 0;
-}
 .btn-slide {
-    color: #fff;
-    text-decoration: none;
-}
+     display: inline-block;
+     float:right;
+     margin:5px 5px 0 0;
+     font-size: 38%;
+ }
 
 div.jp-audio, div.jp-video {
     background-color: #3A2A45;
@@ -39,14 +37,15 @@ div.jp-type-playlist div.jp-playlist li.jp-playlist-current {
 .jp-title li, .jp-playlist li {
     font-size: 88%;
 }
+.tabs {margin:0;padding:0;}
 
-.tabsBlock {margin-top:10px;}
+.tabsBlock {margin-top:5px;}
 
 .tabsBlock ul.tabs,ul.am-ui-tab-strip {
-    height:20px;
+    height:10px;
     list-style:none;
     position:relative;
-    padding:1px 5px;
+    padding:1px 1px;
     display:block;
     font-size: 77%;
     /* CSS3 Rounded Corners For Top Left/Top Right of Tabs */
@@ -69,7 +68,7 @@ div.jp-type-playlist div.jp-playlist li.jp-playlist-current {
     border-bottom-width:0 !important;
     outline:none;
     cursor:pointer;
-    width: 130px;
+    width: 70px;
 }
 
 .tabsBlock	ul.tabs li.active,ul.am-ui-tab-strip li.am-ui-tab-selected {
