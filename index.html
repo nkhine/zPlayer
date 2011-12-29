@@ -99,7 +99,7 @@ $(document).ready(function(){
     $(".jp-type-playlist .jp-playlist #tabs-1 ul li").eq(k).hide();
   }
   /// we don't want to display the player on load time
-  $("#jquery_jplayer_1").jPlayer("option","size",{width:0, height:0});
+  /// $("#jquery_jplayer_1").jPlayer("option","size",{width:0, height:0});
   
   /// slide action for the control panel
   $(".btn-slide").click(function(){
@@ -141,6 +141,9 @@ $(document).ready(function(){
     <img id="jp_poster_0">
   </div>
   <div id="jp_container_1" class="jp-video">
+    <div class="jp-video-play">
+      <a href="javascript:;" class="jp-video-play-icon" tabindex="1">play</a>
+    </div>
     <div class="jp-type-playlist">
       <div class="jp-gui jp-interface">
           <div class="jp-progress">
