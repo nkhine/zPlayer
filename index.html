@@ -32,7 +32,6 @@
 <script type="text/javascript">
 //<![CDATA[
 $(document).ready(function(){
-  $("div#panel").slideUp(0);
   ///init screen
   var total_length=$(".jp-type-playlist .jp-playlist ul .list").length;
   var init_point = new Array(3);
@@ -44,7 +43,11 @@ $(document).ready(function(){
   var m4v = new Array(3);
   var ogv = new Array(3);
   var webmv = new Array(3);
+  var poster = new Array(3);
   var init_flag = 0; 
+  var flag_show = 0;
+  
+  
   for(i=1; i<4; i++)
   {
     list_length[i] = $(".jp-type-playlist .jp-playlist #tabs-"+i+" ul .list").length;
@@ -54,6 +57,7 @@ $(document).ready(function(){
     m4v[i] = new Array(list_length[i]);
     ogv[i] = new Array(list_length[i]);
     webmv[i] = new Array(list_length[i]);
+	poster[i] = new Array(list_length[i]);
     init_point[i-1]=init_flag; 
 
     for(j=0; j< list_length[i] ; j++)
@@ -64,6 +68,7 @@ $(document).ready(function(){
       m4v[i][j] = $(".jp-type-playlist .jp-playlist #tabs-"+i+" ul .list a").eq(j).attr("m4v");
       ogv[i][j] = $(".jp-type-playlist .jp-playlist #tabs-"+i+" ul .list a").eq(j).attr("ogv");
       webmv[i][j] = $(".jp-type-playlist .jp-playlist #tabs-"+i+" ul .list a").eq(j).attr("webmv");
+	  poster[i][j] = $(".jp-type-playlist .jp-playlist #tabs-"+i+" ul .list a").eq(j).attr("poster");
       init_flag++;
     }
   }
@@ -90,7 +95,8 @@ $(document).ready(function(){
         oga: oga[i][j],
         m4v: m4v[i][j],
         ogv: ogv[i][j],
-        webmv: webmv[i][j]
+        webmv: webmv[i][j],
+		poster: poster[i][j]
       });
     }
   }
@@ -103,8 +109,39 @@ $(document).ready(function(){
   
   /// slide action for the control panel
   $(".btn-slide").click(function(){
-    $("#panel").slideToggle("fast");
-    $(this).toggleClass("active"); return false;
+  	
+		if(flag_show % 2 == 0) {
+			$(".jp-interface").addClass("jp-interface-show");
+			$("#panel").css({ "display" : "block"});
+			$(".tabsBlock").css({ "margin-top" : "20px"});
+			flag_show++;
+			$("#tmp_show_flag").attr("value", flag_show);
+			return false;
+		}
+		else {
+			$(".jp-interface").removeClass("jp-interface-show");
+			$("#panel").css({ "display" : "none"});
+			$(".tabsBlock").css({ "margin-top" : "5px"});
+			flag_show++;
+			$("#tmp_show_flag").attr("value", flag_show);
+			return false;
+		}
+	/*
+	else {
+		if(flag_show % 2 == 0) {
+			$("#panel").css({ "display" : "block"});
+			flag_show++;
+			$("#tmp_show_flag").attr("value", flag_show);
+			return false;
+		}
+		else {
+			$("#panel").css({ "display" : "none"});
+			flag_show++;
+			$("#tmp_show_flag").attr("value", flag_show);
+			return false;
+		}
+	}*/
+	
   });
 
   //tab switch
@@ -120,7 +157,8 @@ $(document).ready(function(){
     for(l = 0; l< init_point[divindex-1];l++)
     {
       $(".jp-type-playlist .jp-playlist #tabs-"+divindex+" ul li").eq(l).hide();
-    }	
+    }
+	
     for(m = init_point[divindex]; m< total_length; m++)
     {
       $(".jp-type-playlist .jp-playlist #tabs-"+divindex+" ul li").eq(m).hide();
@@ -137,13 +175,16 @@ $(document).ready(function(){
 
 <body>
   <input id="tmp_duration" type="hidden" value="" />
+  <input id="tmp_show_flag" type="hidden"  />
   <div id="jquery_jplayer_1" class="jp-jplayer">
-    <img id="jp_poster_0">
+    <img src="http://www.jplayer.org/video/poster/Big_Buck_Bunny_Trailer_480x270.png" style=" width:320px; height:270px; display: inline;" id="jp_poster_0">
   </div>
-  <div id="jp_container_1" class="jp-video">
+  <div id="jp_container_1" class="jp-video">    
+    
     <div class="jp-video-play">
       <a href="javascript:;" class="jp-video-play-icon" tabindex="1">play</a>
     </div>
+    
     <div class="jp-type-playlist">
       <div class="jp-gui jp-interface">
           <div class="jp-progress">
@@ -192,15 +233,14 @@ $(document).ready(function(){
                 class="track">
                 Big Buck Bunny Trailer</a>
               </li>
-              <li class="list" ><a title="unselect" href="javascript:;" mp="http://www.jplayer.org/audio/mp3/TSP-01-Cro_magnon_man.mp3" oga="http://www.jplayer.org/audio/ogg/TSP-01-Cro_magnon_man.ogg" class="track">Cro Magnon Man</a></li> 
-              <li class="list" ><a title="unselect" href="javascript:;" mp="http://www.jplayer.org/audio/mp3/TSP-01-Cro_magnon_man.mp3" oga="http://www.jplayer.org/audio/ogg/TSP-01-Cro_magnon_man.ogg" class="track">Cro Magnon Man</a></li> 
+               
             </ul>
           </div>
         </div>
         <div class="jp-playlist" index="2" style="display: none;">
           <div id="tabs-2" class="tab-item" style="display: none;">
             <ul>
-              <li class="list" ><a title="unselect" href="javascript:;" mp="http://www.jplayer.org/audio/mp3/TSP-01-Cro_magnon_man.mp3" oga="http://www.jplayer.org/audio/ogg/TSP-01-Cro_magnon_man.ogg" class="track">Cro Magnon Man</a></li> 
+              <li class="list" ><a title="unselect" href="javascript:;" mp="http://www.jplayer.org/audio/mp3/TSP-01-Cro_magnon_man.mp3" oga="http://www.jplayer.org/audio/ogg/TSP-01-Cro_magnon_man.ogg" poster="./resource/cro_magnon_man_320 x 270.png" class="track">Cro Magnon Man</a></li> 
             </ul>
           </div>
         </div>	
@@ -208,7 +248,7 @@ $(document).ready(function(){
           <div id="tabs-3" class="tab-item" style="display: none;">
             <ul>
               <li class="list"><a title="unselect" href="javascript:;" m4v="http://www.jplayer.org/video/m4v/Big_Buck_Bunny_Trailer.m4v" ogv="http://www.jplayer.org/video/ogv/Big_Buck_Bunny_Trailer.ogv" webmv="http://www.jplayer.org/video/webm/Big_Buck_Bunny_Trailer.webm" poster="http://www.jplayer.org/video/poster/Big_Buck_Bunny_Trailer_480x270.png" class="track">Big Buck Bunny Trailer</a></li>
-              <li class = "list"><a title="unselect" href="javascript:;" mp="http://www.jplayer.org/audio/mp3/TSP-01-Cro_magnon_man.mp3" oga="http://www.jplayer.org/audio/ogg/TSP-01-Cro_magnon_man.ogg" class="track">Cro Magnon Man</a></li> 
+              <li class = "list"><a title="unselect" href="javascript:;" mp="http://www.jplayer.org/audio/mp3/TSP-01-Cro_magnon_man.mp3" oga="http://www.jplayer.org/audio/ogg/TSP-01-Cro_magnon_man.ogg" poster="./resource/cro_magnon_man_320 x 270.png" class="track">Cro Magnon Man</a></li> 
             </ul>
           </div>
         </div>
