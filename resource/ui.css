@@ -50,7 +50,7 @@ div.jp-type-playlist div.jp-playlist li.jp-playlist-current {
 .tabsBlock {margin-top:5px;}
 
 .tabsBlock ul.tabs,ul.am-ui-tab-strip {
-    height:30px;
+    height:39px;
 	width:270px;
     list-style:none;
     position:relative;
@@ -84,6 +84,7 @@ div.jp-type-playlist div.jp-playlist li.jp-playlist-current {
     border-bottom:solid 1px #fff !important;
     border:solid 1px #ccc;
     background-color:#682776;
+	display:inline-block;
 }
 
 .tabsBlock	ul.tabs li:hover,ul.tabs li.active:hover,ul.am-ui-tab-strip li:hover,ul.am-ui-tab-strip li.am-ui-tab-selected:hover  {
